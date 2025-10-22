@@ -150,16 +150,8 @@
   "projects": {
     "items": [
       {
-        "title": "<PLACEHOLDER>",
-        "description": "Project details need to be added here. Include project name, description, technologies used, and key outcomes or achievements."
-      },
-      {
-        "title": "<PLACEHOLDER>",
-        "description": "Project details need to be added here. Include project name, description, technologies used, and key outcomes or achievements."
-      },
-      {
-        "title": "<PLACEHOLDER>",
-        "description": "Project details need to be added here. Include project name, description, technologies used, and key outcomes or achievements."
+        "title": "Coming Soon...",
+        "description": "Project details coming soon."
       }
     ],
     "footerText": "Project details coming soon. Want to collaborate? Run",
