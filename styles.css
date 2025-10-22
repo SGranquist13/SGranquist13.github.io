@@ -1,0 +1,555 @@
+/* CSS Variables for easy theme customization */
+:root {
+    --bg-primary: #0a0e27;
+    --bg-secondary: #121530;
+    --bg-terminal: #0d1117;
+    --text-primary: #e6edf3;
+    --text-secondary: #7d8590;
+    --accent-cyan: #00ffff;
+    --accent-green: #39ff14;
+    --accent-purple: #9d4edd;
+    --accent-red: #ff3e3e;
+    --accent-yellow: #ffd700;
+    --border-color: #30363d;
+    --glow-cyan: rgba(0, 255, 255, 0.3);
+    --glow-green: rgba(57, 255, 20, 0.3);
+}
+
+/* Matrix Theme - Classic green on black */
+[data-theme="matrix"] {
+    --bg-primary: #000000;
+    --bg-secondary: #0d0d0d;
+    --bg-terminal: #000000;
+    --text-primary: #00ff00;
+    --text-secondary: #008000;
+    --accent-cyan: #00ff00;
+    --accent-green: #39ff14;
+    --accent-purple: #00cc00;
+    --accent-red: #00ff00;
+    --accent-yellow: #00ff00;
+    --border-color: #003300;
+    --glow-cyan: rgba(0, 255, 0, 0.4);
+    --glow-green: rgba(57, 255, 20, 0.4);
+}
+
+/* Sunset Theme - Warm oranges and purples */
+[data-theme="sunset"] {
+    --bg-primary: #1a0a2e;
+    --bg-secondary: #2d1b4e;
+    --bg-terminal: #16213e;
+    --text-primary: #ffeaa7;
+    --text-secondary: #daa520;
+    --accent-cyan: #ff6b6b;
+    --accent-green: #ffa500;
+    --accent-purple: #ff6b9d;
+    --accent-red: #ff5555;
+    --accent-yellow: #ffd93d;
+    --border-color: #5f4068;
+    --glow-cyan: rgba(255, 107, 107, 0.3);
+    --glow-green: rgba(255, 165, 0, 0.3);
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* Animated Background Effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: backgroundMove 20s linear infinite;
+    z-index: 0;
+}
+
+@keyframes backgroundMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+/* Terminal Container */
+.terminal-container {
+    position: relative;
+    z-index: 1;
+    width: 85vw;
+    max-width: none;
+    height: 95vh;
+    max-height: 910px;
+    background: var(--bg-terminal);
+    border-radius: 12px;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 40px var(--glow-cyan),
+        inset 0 0 60px rgba(0, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: terminalFadeIn 0.6s ease-out;
+}
+
+@keyframes terminalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Terminal Header */
+.terminal-header {
+    background: linear-gradient(180deg, #1c1f2e 0%, #161922 100%);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    gap: 12px;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.btn-close {
+    background: #ff5f56;
+    box-shadow: 0 0 8px rgba(255, 95, 86, 0.5);
+}
+
+.btn-minimize {
+    background: #ffbd2e;
+    box-shadow: 0 0 8px rgba(255, 189, 46, 0.5);
+}
+
+.btn-maximize {
+    background: #27c93f;
+    box-shadow: 0 0 8px rgba(39, 201, 63, 0.5);
+}
+
+.btn:hover {
+    transform: scale(1.15);
+    filter: brightness(1.2);
+}
+
+.terminal-title {
+    color: var(--text-secondary);
+    font-size: 13px;
+    flex-grow: 1;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Theme Switcher */
+.theme-switcher {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.theme-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    padding: 0;
+}
+
+.theme-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-cyan);
+    transform: scale(1.1);
+    box-shadow: 0 0 12px var(--glow-cyan);
+}
+
+.theme-btn.active {
+    background: var(--accent-cyan);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 16px var(--glow-cyan);
+}
+
+.theme-btn.active .theme-icon {
+    filter: brightness(0) invert(1);
+}
+
+.theme-icon {
+    pointer-events: none;
+}
+
+/* Terminal Body */
+.terminal-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.terminal-output {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-bottom: 16px;
+    line-height: 1.6;
+    font-size: 14px;
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+.terminal-output::-webkit-scrollbar {
+    width: 8px;
+}
+
+.terminal-output::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+    border-radius: 4px;
+}
+
+.terminal-output::-webkit-scrollbar-thumb {
+    background: var(--accent-cyan);
+    border-radius: 4px;
+    box-shadow: 0 0 6px var(--glow-cyan);
+}
+
+.terminal-output::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-green);
+}
+
+/* Output Line Styles */
+.output-line {
+    margin-bottom: 8px;
+    animation: lineAppear 0.3s ease-out;
+}
+
+@keyframes lineAppear {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.command-line {
+    color: var(--accent-cyan);
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.command-line .prompt {
+    color: var(--accent-green);
+}
+
+.output-text {
+    color: var(--text-primary);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.output-error {
+    color: var(--accent-red);
+    text-shadow: 0 0 8px rgba(255, 62, 62, 0.4);
+}
+
+.output-success {
+    color: var(--accent-green);
+    text-shadow: 0 0 8px var(--glow-green);
+}
+
+.output-highlight {
+    color: var(--accent-cyan);
+    text-shadow: 0 0 8px var(--glow-cyan);
+}
+
+.output-link {
+    color: var(--accent-purple);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.output-link:hover {
+    border-bottom-color: var(--accent-purple);
+    text-shadow: 0 0 10px rgba(157, 78, 221, 0.6);
+}
+
+.command-table {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 8px 20px;
+    margin: 12px 0;
+}
+
+.command-name {
+    color: var(--accent-cyan);
+    font-weight: 600;
+}
+
+.command-desc {
+    color: var(--text-secondary);
+}
+
+/* Terminal Input Line */
+.terminal-input-line {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(48, 54, 61, 0.5);
+}
+
+.terminal-prompt {
+    color: var(--accent-green);
+    font-weight: 600;
+    text-shadow: 0 0 10px var(--glow-green);
+    white-space: nowrap;
+    animation: promptPulse 2s ease-in-out infinite;
+}
+
+@keyframes promptPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.terminal-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 14px;
+    caret-color: var(--accent-cyan);
+}
+
+.terminal-input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.5;
+}
+
+/* Typing Cursor Animation */
+.typing-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--accent-cyan);
+    margin-left: 2px;
+    animation: cursorBlink 1s infinite;
+    box-shadow: 0 0 8px var(--glow-cyan);
+}
+
+@keyframes cursorBlink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+/* Welcome ASCII Art */
+.ascii-art {
+    color: var(--accent-cyan);
+    font-size: 11px;
+    line-height: 1.1;
+    margin: 16px 0 24px 0;
+    text-shadow: 0 0 10px var(--glow-cyan);
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    overflow-x: auto;
+}
+
+/* Skill Grid */
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin: 12px 0;
+}
+
+.skill-category {
+    background: rgba(0, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.skill-category h3 {
+    color: var(--accent-cyan);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skill-category li {
+    color: var(--text-secondary);
+    font-size: 13px;
+    padding: 3px 0;
+    padding-left: 16px;
+    position: relative;
+}
+
+.skill-category li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--accent-green);
+}
+
+/* Project Card */
+.project-card {
+    background: rgba(57, 255, 20, 0.05);
+    padding: 16px;
+    border-radius: 6px;
+    border-left: 3px solid var(--accent-green);
+    margin: 12px 0;
+}
+
+.project-card h3 {
+    color: var(--accent-green);
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.project-card p {
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    .terminal-container {
+        height: 90vh;
+        max-height: none;
+        border-radius: 8px;
+    }
+    
+    .terminal-body {
+        padding: 12px;
+    }
+    
+    .terminal-output {
+        font-size: 13px;
+    }
+    
+    .terminal-title {
+        font-size: 11px;
+    }
+    
+    .command-table {
+        grid-template-columns: 100px 1fr;
+        gap: 6px 12px;
+    }
+    
+    .skill-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .terminal-prompt {
+        font-size: 12px;
+    }
+    
+    .terminal-input {
+        font-size: 13px;
+    }
+    
+    .ascii-art {
+        font-size: 9px;
+        line-height: 1;
+    }
+    
+    .theme-switcher {
+        gap: 6px;
+    }
+    
+    .theme-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .terminal-header {
+        padding: 10px 12px;
+    }
+    
+    .btn {
+        width: 10px;
+        height: 10px;
+    }
+    
+    .terminal-buttons {
+        gap: 6px;
+    }
+    
+    .terminal-title {
+        font-size: 10px;
+    }
+    
+    .theme-btn {
+        width: 26px;
+        height: 26px;
+        font-size: 12px;
+    }
+}
+
+/* Loading Animation */
+@keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+}
+
+.loading::after {
+    content: '.';
+    animation: dots 1.5s infinite;
+}
+
+
+

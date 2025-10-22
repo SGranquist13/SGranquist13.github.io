@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Steven Granquist - Senior Systems Architect Portfolio">
+    <meta name="author" content="Steven Granquist">
+    <meta name="keywords" content="systems architect, portfolio, developer, engineer">
+    <title>Steven Granquist - Systems Architect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="btn btn-close"></span>
+                <span class="btn btn-minimize"></span>
+                <span class="btn btn-maximize"></span>
+            </div>
+            <div class="terminal-title">steven@portfolio:~$</div>
+            <div class="theme-switcher">
+                <button class="theme-btn" data-theme="cyber" title="Cyber Theme">
+                    <span class="theme-icon">⚡</span>
+                </button>
+                <button class="theme-btn" data-theme="matrix" title="Matrix Theme">
+                    <span class="theme-icon">💚</span>
+                </button>
+                <button class="theme-btn" data-theme="sunset" title="Sunset Theme">
+                    <span class="theme-icon">🌅</span>
+                </button>
+            </div>
+        </div>
+        
+        <div class="terminal-body">
+            <div id="terminal-output" class="terminal-output">
+                <!-- Output will be dynamically generated here -->
+            </div>
+            
+            <div class="terminal-input-line">
+                <span class="terminal-prompt">guest@portfolio:~$</span>
+                <input 
+                    type="text" 
+                    id="terminal-input" 
+                    class="terminal-input" 
+                    autofocus 
+                    autocomplete="off"
+                    spellcheck="false"
+                    placeholder="Type 'help' to get started..."
+                />
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+

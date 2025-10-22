@@ -1,0 +1,216 @@
+{
+  "personal": {
+    "name": "Steven Granquist",
+    "title": "Senior Systems Architect",
+    "metaDescription": "Steven Granquist - Senior Systems Architect Portfolio",
+    "metaKeywords": "systems architect, portfolio, developer, engineer"
+  },
+  "banner": {
+    "asciiArt": [
+      "   ███████╗████████╗███████╗██╗   ██╗███████╗███╗   ██╗",
+      "   ██╔════╝╚══██╔══╝██╔════╝██║   ██║██╔════╝████╗  ██║",
+      "   ███████╗   ██║   █████╗  ██║   ██║█████╗  ██╔██╗ ██║",
+      "   ╚════██║   ██║   ██╔══╝  ╚██╗ ██╔╝██╔══╝  ██║╚██╗██║",
+      "   ███████║   ██║   ███████╗ ╚████╔╝ ███████╗██║ ╚████║",
+      "   ╚══════╝   ╚═╝   ╚══════╝  ╚═══╝  ╚══════╝╚═╝  ╚═══╝",
+      "",
+      "              GRANQUIST | Senior Systems Architect"
+    ],
+    "welcomeMessage": "Welcome to my interactive portfolio!",
+    "helpText": "Type 'help' to see available commands.\nType 'about' to learn more about me.\n\nThis terminal supports command history (↑/↓) and tab completion."
+  },
+  "about": {
+    "position": "Senior Systems Architect",
+    "summary": [
+      "I am a Senior Systems Architect specializing in designing and implementing scalable, secure, and cost-efficient infrastructure solutions across cloud, hybrid, and on-prem environments. With over 10 years of hands-on experience, I've led technical transformations for AI-driven healthcare platforms, education technology companies, and enterprise SaaS providers.",
+      "",
+      "At Aiforia Technologies, I architect cloud infrastructure that supports AI/ML workloads in regulated healthcare environments. As a member of the cybersecurity team and HIPAA Security Officer, I integrate secure-by-design principles into every layer of the stack. My work spans multi-cloud orchestration (GCP, Azure, AWS), containerized deployments with Kubernetes and Docker, and Infrastructure as Code with Terraform — all tailored to meet strict compliance and performance needs.",
+      "",
+      "Previously, at Read Naturally, I directed full-spectrum infrastructure initiatives — from cloud migrations and DevOps pipeline automation to disaster recovery and cost-optimization strategies. My foundation in Linux systems administration and scripting, combined with a collaborative approach to cross-functional teamwork, enables me to solve complex challenges efficiently and sustainably."
+    ],
+    "philosophy": "I bring a holistic, security-first perspective to every project — ensuring that the systems I build are not only robust and scalable but also aligned with real business outcomes."
+  },
+  "skills": {
+    "categories": [
+      {
+        "icon": "☁️",
+        "title": "Cloud Platforms",
+        "items": [
+          "AWS (EC2, ELB, RDS, S3, CloudFront)",
+          "AWS (Elastic Beanstalk, CloudFormation)",
+          "Microsoft Azure (VMs, Virtual Desktop)",
+          "Google Cloud Platform (GCP)",
+          "Multi-cloud & hybrid design",
+          "Cloud cost optimization"
+        ]
+      },
+      {
+        "icon": "⚙️",
+        "title": "Infrastructure & DevOps",
+        "items": [
+          "Terraform, CloudFormation",
+          "CI/CD (Jenkins, GitHub Actions)",
+          "Docker, Kubernetes, LXC",
+          "Configuration Mgmt (SaltStack)",
+          "High availability architecture",
+          "Multi-region, multi-account"
+        ]
+      },
+      {
+        "icon": "🧠",
+        "title": "AI/ML Infrastructure",
+        "items": [
+          "GPU-accelerated infrastructure",
+          "ML inference & training environments",
+          "AI diagnostics platforms",
+          "Healthcare AI workloads"
+        ]
+      },
+      {
+        "icon": "🔐",
+        "title": "Security & Compliance",
+        "items": [
+          "HIPAA Compliance & Security Officer",
+          "Data encryption & access control",
+          "Incident response & DR planning",
+          "Security monitoring (ElasticStack, Splunk)",
+          "VPN, firewall, network security"
+        ]
+      },
+      {
+        "icon": "🖥️",
+        "title": "Systems Administration",
+        "items": [
+          "Linux (RedHat, CentOS, Ubuntu)",
+          "Windows Server",
+          "Bash scripting",
+          "Apache, NGINX, Tomcat",
+          "MySQL, PostgreSQL, MariaDB",
+          "Backup & recovery systems"
+        ]
+      },
+      {
+        "icon": "🧰",
+        "title": "Tools & Platforms",
+        "items": [
+          "Git, GitHub, Bitbucket",
+          "Jira, Confluence",
+          "Office 365 / M365 Admin",
+          "Ticketing & support systems",
+          "Azure Virtual Desktop, VPNs"
+        ]
+      },
+      {
+        "icon": "🤝",
+        "title": "Leadership & Soft Skills",
+        "items": [
+          "Cross-functional collaboration",
+          "Leading infrastructure teams",
+          "Mentoring junior admins",
+          "Project planning & strategy",
+          "Agile/Scrum environments",
+          "Risk mitigation & compliance"
+        ]
+      }
+    ]
+  },
+  "experience": {
+    "positions": [
+      {
+        "title": "Senior Systems Architect",
+        "company": "Aiforia Technologies",
+        "focus": "AI-driven healthcare platforms",
+        "responsibilities": [
+          "Architect cloud infrastructure supporting AI/ML workloads in regulated healthcare environments",
+          "Serve as HIPAA Security Officer and member of cybersecurity team",
+          "Integrate secure-by-design principles into every layer of the stack",
+          "Multi-cloud orchestration across GCP, Azure, and AWS",
+          "Containerized deployments with Kubernetes and Docker",
+          "Infrastructure as Code implementation with Terraform",
+          "Ensure strict compliance and performance requirements are met"
+        ]
+      },
+      {
+        "title": "Infrastructure Lead",
+        "company": "Read Naturally",
+        "focus": "Education technology",
+        "responsibilities": [
+          "Directed full-spectrum infrastructure initiatives",
+          "Led cloud migrations and DevOps pipeline automation",
+          "Implemented disaster recovery and cost-optimization strategies",
+          "Linux systems administration and scripting",
+          "Cross-functional collaboration with development and IT teams",
+          "Established infrastructure best practices and documentation"
+        ]
+      }
+    ],
+    "linkedInUrl": "https://www.linkedin.com/in/steven-granquist-1898b9114",
+    "linkedInText": "For a complete work history, visit my LinkedIn profile"
+  },
+  "projects": {
+    "items": [
+      {
+        "title": "<PLACEHOLDER>",
+        "description": "Project details need to be added here. Include project name, description, technologies used, and key outcomes or achievements."
+      },
+      {
+        "title": "<PLACEHOLDER>",
+        "description": "Project details need to be added here. Include project name, description, technologies used, and key outcomes or achievements."
+      },
+      {
+        "title": "<PLACEHOLDER>",
+        "description": "Project details need to be added here. Include project name, description, technologies used, and key outcomes or achievements."
+      }
+    ],
+    "footerText": "Project details coming soon. Want to collaborate? Run",
+    "footerCommand": "contact"
+  },
+  "contact": {
+    "email": "<PLACEHOLDER>",
+    "linkedIn": {
+      "url": "https://www.linkedin.com/in/steven-granquist-1898b9114",
+      "display": "linkedin.com/in/steven-granquist-1898b9114"
+    },
+    "github": "<PLACEHOLDER>",
+    "location": "<PLACEHOLDER>",
+    "availability": {
+      "message": "💡 Open to interesting opportunities and collaborations!",
+      "details": "Feel free to reach out for consulting, speaking engagements, or just to chat about systems architecture."
+    }
+  },
+  "social": {
+    "links": [
+      {
+        "icon": "🔗",
+        "platform": "LinkedIn",
+        "url": "https://www.linkedin.com/in/steven-granquist-1898b9114",
+        "display": "linkedin.com/in/steven-granquist-1898b9114"
+      },
+      {
+        "icon": "💻",
+        "platform": "GitHub",
+        "url": "<PLACEHOLDER>",
+        "display": "<PLACEHOLDER>"
+      },
+      {
+        "icon": "🐦",
+        "platform": "Twitter",
+        "url": "<PLACEHOLDER>",
+        "display": "<PLACEHOLDER>"
+      },
+      {
+        "icon": "📝",
+        "platform": "Blog",
+        "url": "<PLACEHOLDER>",
+        "display": "<PLACEHOLDER>"
+      },
+      {
+        "icon": "📧",
+        "platform": "Email",
+        "url": "<PLACEHOLDER>",
+        "display": "<PLACEHOLDER>"
+      }
+    ]
+  }
+}
+
