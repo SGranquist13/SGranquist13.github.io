@@ -10,47 +10,168 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="terminal-container">
-        <div class="terminal-header">
-            <div class="terminal-buttons">
-                <span class="btn btn-close"></span>
-                <span class="btn btn-minimize"></span>
-                <span class="btn btn-maximize"></span>
-            </div>
-            <div class="terminal-title">steven@portfolio:~$</div>
-            <div class="theme-switcher">
-                <button class="theme-btn" data-theme="cyber" title="Cyber Theme">
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <div class="nav-logo">SG</div>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">Terminal</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="theme-switcher-nav">
+                <button class="theme-btn-nav" data-theme="cyber" title="Cyber Theme">
                     <span class="theme-icon">⚡</span>
                 </button>
-                <button class="theme-btn" data-theme="matrix" title="Matrix Theme">
+                <button class="theme-btn-nav" data-theme="matrix" title="Matrix Theme">
                     <span class="theme-icon">💚</span>
                 </button>
-                <button class="theme-btn" data-theme="sunset" title="Sunset Theme">
+                <button class="theme-btn-nav" data-theme="sunset" title="Sunset Theme">
                     <span class="theme-icon">🌅</span>
                 </button>
             </div>
         </div>
-        
-        <div class="terminal-body">
-            <div id="terminal-output" class="terminal-output">
-                <!-- Output will be dynamically generated here -->
+    </nav>
+
+    <!-- Hero Section - Terminal -->
+    <section id="hero" class="section hero-section">
+        <div class="hero-bg-effects">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <span class="btn btn-close"></span>
+                    <span class="btn btn-minimize"></span>
+                    <span class="btn btn-maximize"></span>
+                </div>
+                <div class="terminal-title">steven@portfolio:~$</div>
+                <div class="theme-switcher">
+                    <button class="theme-btn" data-theme="cyber" title="Cyber Theme">
+                        <span class="theme-icon">⚡</span>
+                    </button>
+                    <button class="theme-btn" data-theme="matrix" title="Matrix Theme">
+                        <span class="theme-icon">💚</span>
+                    </button>
+                    <button class="theme-btn" data-theme="sunset" title="Sunset Theme">
+                        <span class="theme-icon">🌅</span>
+                    </button>
+                </div>
             </div>
-            
-            <div class="terminal-input-line">
-                <span class="terminal-prompt">guest@portfolio:~$</span>
-                <input 
-                    type="text" 
-                    id="terminal-input" 
-                    class="terminal-input" 
-                    autofocus 
-                    autocomplete="off"
-                    spellcheck="false"
-                    placeholder="Type 'help' to get started..."
-                />
+
+            <div class="terminal-body">
+                <div id="terminal-output" class="terminal-output">
+                    <!-- Output will be dynamically generated here -->
+                </div>
+
+                <div class="terminal-input-line">
+                    <span class="terminal-prompt">guest@portfolio:~$</span>
+                    <input
+                        type="text"
+                        id="terminal-input"
+                        class="terminal-input"
+                        autofocus
+                        autocomplete="off"
+                        spellcheck="false"
+                        placeholder="Type 'help' to get started..."
+                    />
+                </div>
             </div>
         </div>
-    </div>
-    
+
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="scroll-text">Scroll to explore</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">About Me</h2>
+                <div class="section-subtitle">Senior Systems Architect</div>
+            </div>
+            <div class="about-content reveal">
+                <div class="about-text" id="about-text">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Technical Expertise</h2>
+                <div class="section-subtitle">Skills & Technologies</div>
+            </div>
+            <div class="skills-grid" id="skills-grid">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Professional Journey</h2>
+                <div class="section-subtitle">Work Experience</div>
+            </div>
+            <div class="experience-timeline" id="experience-timeline">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="section-subtitle">Notable Work</div>
+            </div>
+            <div class="projects-grid" id="projects-grid">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="section-subtitle">Let's Connect</div>
+            </div>
+            <div class="contact-content" id="contact-content">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Steven Granquist. Built with passion and code.</p>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
