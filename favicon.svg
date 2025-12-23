@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Terminal window background -->
+  <rect x="4" y="8" width="56" height="48" rx="4" fill="#2a2a2a"/>
+  
+  <!-- Window tabs/top section -->
+  <rect x="8" y="12" width="12" height="6" rx="1" fill="#3a3a3a"/>
+  <rect x="22" y="12" width="12" height="6" rx="1" fill="#3a3a3a"/>
+  <rect x="36" y="12" width="12" height="6" rx="1" fill="#3a3a3a"/>
+  
+  <!-- Command prompt chevron -->
+  <path d="M 16 36 L 24 32 L 16 28 Z" fill="#ffffff"/>
+  
+  <!-- Cursor/underscore -->
+  <rect x="32" y="30" width="8" height="2" fill="#ffffff"/>
+</svg>
+

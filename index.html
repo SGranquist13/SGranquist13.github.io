@@ -3,57 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Steven Granquist - Senior Systems Architect Portfolio">
-    <meta name="author" content="Steven Granquist">
-    <meta name="keywords" content="systems architect, portfolio, developer, engineer">
-    <title>Steven Granquist - Systems Architect</title>
+    <title>Steven Granquist - Senior Systems Architect</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="terminal-container">
-        <div class="terminal-header">
-            <div class="terminal-buttons">
-                <span class="btn btn-close"></span>
-                <span class="btn btn-minimize"></span>
-                <span class="btn btn-maximize"></span>
+    <header>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <canvas id="threejs-canvas"></canvas>
+            <div class="hero-content">
+                <h1 class="hero-name">Steven Granquist</h1>
+                <p class="hero-role">Senior Systems Architect</p>
+                <p class="hero-passion">Infrastructure Architecture & AI/ML Specialization - AI Innovation -  HPC Workloads</p>
             </div>
-            <div class="terminal-title">steven@portfolio:~$</div>
-            <div class="theme-switcher">
-                <button class="theme-btn" data-theme="cyber" title="Cyber Theme">
-                    <span class="theme-icon">⚡</span>
-                </button>
-                <button class="theme-btn" data-theme="matrix" title="Matrix Theme">
-                    <span class="theme-icon">💚</span>
-                </button>
-                <button class="theme-btn" data-theme="sunset" title="Sunset Theme">
-                    <span class="theme-icon">🌅</span>
-                </button>
+            <div class="scroll-indicator">
+                <span class="scroll-arrow">↓</span>
             </div>
-        </div>
-        
-        <div class="terminal-body">
-            <div id="terminal-output" class="terminal-output">
-                <!-- Output will be dynamically generated here -->
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="about-container">
+                <div class="about-text">
+                    <h2 class="section-heading">About</h2>
+                    <p class="about-description">
+                        10+ years proven experience in large-scale, multi-platform IT environments. Specializing in infrastructure (Terraform/IaC, Azure/AWS/GCP), software development (C#/.NET), and AI workloads including inference and training on NVIDIA/CUDA platforms. Passionate about AI, AI coding, pushing the boundaries of AI technology, and building agent-driven systems. Design and implement scalable, automated deployments with Infrastructure-as-Code tools. Drive software delivery to ensure quick, rapid, foolproof, non-interruptive updates. Fully implement and scale CI/CD pipelines and DevOps practices. Effective communication, excels at laying out plans and ideas to stakeholders. Collaboration with teams to meet business visions.
+                    </p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">YEARS EXPERIENCE</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">Multi</div>
+                        <div class="stat-label">CLOUD & ON-PREM</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">AI/ML</div>
+                        <div class="stat-label">SPECIALIZATION</div>
+                    </div>
+                </div>
             </div>
-            
-            <div class="terminal-input-line">
-                <span class="terminal-prompt">guest@portfolio:~$</span>
-                <input 
-                    type="text" 
-                    id="terminal-input" 
-                    class="terminal-input" 
-                    autofocus 
-                    autocomplete="off"
-                    spellcheck="false"
-                    placeholder="Type 'help' to get started..."
-                />
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="skills-container">
+                <div class="skills-header">
+                    <span class="section-label">TECHNICAL SKILLS</span>
+                    <h2 class="section-heading-large">
+                        Technologies and tools<br>
+                        I work with
+                    </h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <h3 class="skill-title">Cloud Infrastructure</h3>
+                        <p class="skill-list">Azure, AWS, GCP - Multi-cloud architecture and deployment</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3 class="skill-title">Infrastructure as Code</h3>
+                        <p class="skill-list">Terraform, Pulumi, CloudFormation, ARM Templates</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3 class="skill-title">AI Workloads</h3>
+                        <p class="skill-list">AI Inference & Training, NVIDIA/CUDA, GPU-accelerated computing, AI/ML Infrastructure</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3 class="skill-title">Software Development</h3>
+                        <p class="skill-list">C#, .NET, Python, React, TypeScript, C++</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3 class="skill-title">Containerization</h3>
+                        <p class="skill-list">Docker, Kubernetes, GPU-accelerated workloads</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3 class="skill-title">CI/CD & DevOps</h3>
+                        <p class="skill-list">CI/CD Pipelines, Azure Pipelines, GitHub Actions, Agile/Scrum</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3 class="skill-title">AI & Agent Systems</h3>
+                        <p class="skill-list">AI Coding, Agent-Driven Development, AI Infrastructure Design</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3 class="skill-title">Security & Compliance</h3>
+                        <p class="skill-list">HIPAA, Cloud Security, PCI Compliance</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience">
+            <div class="experience-container">
+                <div class="experience-header">
+                    <span class="section-label">PROFESSIONAL EXPERIENCE</span>
+                    <h2 class="section-heading-large">
+                        Work history and<br>
+                        achievements
+                    </h2>
+                </div>
+                <div class="experience-list">
+                    <div class="experience-item">
+                        <div class="experience-header-item">
+                            <h3 class="experience-title">Senior Systems Architect</h3>
+                            <span class="experience-company">Aiforia Technologies</span>
+                            <span class="experience-date">December 2019 - July 2025</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>Design and optimize high-performance Cloud Infrastructure tailored for AI and High Performance Compute processing</li>
+                            <li>Design and Implement Infrastructure-as-Code (IaC) with Terraform/Pulumi, enabling consistent and scalable deployments across single and multi-tenant Google Cloud, Azure, and AWS</li>
+                            <li>Design and implement CI/CD pipelines and DevOps practices for rapid Agile Development</li>
+                            <li>Deploy and manage highly available and scalable multi-container environments, supporting Docker, Kubernetes, and GPU-accelerated (NVIDIA, CUDA) workloads</li>
+                            <li>Work with customers to design custom-tailored solutions for their application needs (Private Deployments, Data Requirements, Healthcare)</li>
+                            <li>Support enterprise customers directly with deployment and technical support (Mayo Clinic)</li>
+                            <li>Migration of on-premises and legacy applications to modern cloud platforms</li>
+                            <li>Function as HIPAA Security Officer, ensuring the confidentiality and integrity of sensitive data as a member of the Aiforia Cybersecurity Team</li>
+                            <li>Collaborate with cross-functional technical teams to architect and deliver best-in-class solutions that meet business objectives</li>
+                            <li>Implement strategies to optimize cloud resource utilization and minimize costs</li>
+                            <li>Software development in .NET, C#, Python</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-header-item">
+                            <h3 class="experience-title">Infrastructure Architect</h3>
+                            <span class="experience-company">Read Naturally</span>
+                            <span class="experience-date">December 2019 - July 2022</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>Lead the design, development and deployment of IT Infrastructure company-wide</li>
+                            <li>Design and manage Infrastructure-as-code using Terraform, CloudFormation</li>
+                            <li>Design and implement CI/CD pipelines and DevOps practices for rapid Agile Development</li>
+                            <li>Implement fault-tolerant and high-availability systems and deployment strategies, which allow us to deliver frequent, non-disruptive, updates to customers during peak usage times</li>
+                            <li>Collaborate with the business and development team to create solutions that meet business goals and vision</li>
+                            <li>Extensive experience with AWS and its core services (EC2, ELB, Elastic Beanstalk, RDS, S3, CloudFront)</li>
+                            <li>Define Cloud workloads for business needs. Layout long-term plans to meet business vision</li>
+                            <li>Lead IT team and create high-level design documents for projects to address business needs</li>
+                            <li>Administer enterprise systems handling sensitive and secure data</li>
+                            <li>Understand compliance requirements to meet security standards required by customers</li>
+                            <li>Integrate on-premises technology with various Cloud Services (AWS, Azure)</li>
+                            <li>Setup disaster recovery plans in the event of product outages</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-header-item">
+                            <h3 class="experience-title">Systems Administrator</h3>
+                            <span class="experience-company">Kaningo</span>
+                            <span class="experience-date">May 2019 - October 2019</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>Manage all IT Infrastructure across various Cloud Providers (AWS, RackSpace)</li>
+                            <li>Supported mission critical devices for Payroll Applications</li>
+                            <li>Setup disaster recovery plans in the event of product outages</li>
+                            <li>Work with different project management styles (Scrum, Agile)</li>
+                            <li>Design and implement monitoring software for our Development and Production environments to accurately monitor servers for zero downtime</li>
+                            <li>Design and implement Infrastructure automation (bash)</li>
+                            <li>Managed and supported web applications on Apache, NGINX, Tomcat and Java</li>
+                        </ul>
+                    </div>
+                    <div class="experience-item">
+                        <div class="experience-header-item">
+                            <h3 class="experience-title">Lead Linux System Administrator</h3>
+                            <span class="experience-company">Winona State University</span>
+                            <span class="experience-date">September 2015 - May 2019</span>
+                        </div>
+                        <ul class="experience-details">
+                            <li>Manage all Linux servers and environments for Winona State</li>
+                            <li>Implement automation and management of Linux Servers (SaltStack, Ansible)</li>
+                            <li>Plan, coordinate, and implement server security measures to protect data, software, and hardware in our Linux environment</li>
+                            <li>Lead other Linux administrators. Plan projects and task work for the Systems team</li>
+                            <li>Maintain integrity of the Data Center (Server Maintenance and repairs with minimal downtime)</li>
+                            <li>Setup server racks and deploy new IT Infrastructure in the Data center</li>
+                            <li>Perform server backups and disaster recovery operations</li>
+                            <li>Manage various Linux Platforms and technologies (Apache, Nginx)</li>
+                            <li>Implement and maintain virus protection software</li>
+                            <li>Implement and maintain security softwares to adhere to security standards (PCI)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="education">
+            <div class="education-container">
+                <div class="education-header">
+                    <span class="section-label">EDUCATION</span>
+                    <h2 class="section-heading-large">
+                        Academic background
+                    </h2>
+                </div>
+                <div class="education-list">
+                    <div class="education-item">
+                        <h3 class="education-degree">Bachelor's Degree, Computer Science</h3>
+                        <span class="education-school">Winona State University</span>
+                        <span class="education-date">2015 - 2019</span>
+                    </div>
+                    <div class="education-item">
+                        <h3 class="education-degree">Minor, Data Science</h3>
+                        <span class="education-school">Winona State University</span>
+                        <span class="education-date">2017 - 2019</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="contact-container">
+                <h2 class="contact-heading">Get in Touch</h2>
+                <div class="contact-info">
+                    <p class="contact-location">Dayton MN, 55327</p>
+                    <a href="tel:+16519003654" class="contact-phone">+1 651 900 3654</a>
+                    <a href="mailto:STEVEN.GRANQUIST@OUTLOOK.COM" class="contact-email">STEVEN.GRANQUIST@OUTLOOK.COM</a>
+                </div>
+                <ul class="social-links">
+                    <li><a href="https://www.linkedin.com/in/steven-granquist-1898b9114" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a></li>
+                    <li><a href="https://github.com/SGranquist13" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script src="threejs-animation.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
