@@ -132,4 +132,46 @@ document.addEventListener('DOMContentLoaded', function() {
             ticking = true;
         }
     });
+    
+    // Calculate and display experience duration
+    function calculateDuration(startDate, endDate) {
+        const start = new Date(startDate + '-01');
+        const end = endDate === 'present' ? new Date() : new Date(endDate + '-01');
+        
+        let years = end.getFullYear() - start.getFullYear();
+        let months = end.getMonth() - start.getMonth();
+        
+        if (months < 0) {
+            years--;
+            months += 12;
+        }
+        
+        // Handle case where we're in the same month
+        if (months === 0 && years === 0) {
+            months = 1; // At least 1 month
+        }
+        
+        const parts = [];
+        if (years > 0) {
+            parts.push(years === 1 ? '1 year' : `${years} years`);
+        }
+        if (months > 0) {
+            parts.push(months === 1 ? '1 month' : `${months} months`);
+        }
+        
+        return parts.length > 0 ? `(${parts.join(' ')})` : '';
+    }
+    
+    // Calculate durations for all experience items
+    const experienceDates = document.querySelectorAll('.experience-date[data-start]');
+    experienceDates.forEach(dateElement => {
+        const startDate = dateElement.getAttribute('data-start');
+        const endDate = dateElement.getAttribute('data-end');
+        const durationElement = dateElement.nextElementSibling;
+        
+        if (durationElement && durationElement.classList.contains('experience-duration')) {
+            const duration = calculateDuration(startDate, endDate);
+            durationElement.textContent = duration;
+        }
+    });
 });

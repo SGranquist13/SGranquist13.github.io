@@ -568,6 +568,19 @@ body {
     font-weight: 300;
     color: var(--color-gray-dark);
     letter-spacing: 1px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.experience-duration {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--color-gray-light);
+    letter-spacing: 0.5px;
+    font-style: italic;
+    display: block;
+    margin-top: 5px;
+    padding-left: 5px;
 }
 
 .experience-details {
