@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steven Granquist - Senior Systems Architect</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -14,8 +15,10 @@
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#ai-tools" class="nav-link">AI Tools</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
@@ -27,7 +30,7 @@
             <canvas id="threejs-canvas"></canvas>
             <div class="hero-content">
                 <h1 class="hero-name">Steven Granquist</h1>
-                <p class="hero-role">Senior Systems Architect</p>
+                <p class="hero-role"><span id="typewriter"></span></p>
                 <p class="hero-passion">Infrastructure Architecture & AI/ML Specialization - AI Innovation -  HPC Workloads</p>
             </div>
             <div class="scroll-indicator">
@@ -78,7 +81,7 @@
                     </div>
                     <div class="skill-item">
                         <h3 class="skill-title">Infrastructure as Code</h3>
-                        <p class="skill-list">Terraform, Pulumi, CloudFormation, ARM Templates</p>
+                        <p class="skill-list">Terraform, Pulumi, Kubernetes Operators, AWS CloudFormation, Azure ARM, SaltStack</p>
                     </div>
                     <div class="skill-item">
                         <h3 class="skill-title">AI Workloads</h3>
@@ -86,24 +89,59 @@
                     </div>
                     <div class="skill-item">
                         <h3 class="skill-title">Software Development</h3>
-                        <p class="skill-list">C#, .NET, Python, React, TypeScript, C++</p>
+                        <p class="skill-list">C#, .NET, Python, React, TypeScript, C++, Web Development, Go</p>
                     </div>
                     <div class="skill-item">
                         <h3 class="skill-title">Containerization</h3>
-                        <p class="skill-list">Docker, Kubernetes, GPU-accelerated workloads</p>
+                        <p class="skill-list">Docker, Kubernetes, GPU-accelerated workloads, Rancher, OpenShift, AKS, EKS, GKE</p>
                     </div>
                     <div class="skill-item">
                         <h3 class="skill-title">CI/CD & DevOps</h3>
-                        <p class="skill-list">CI/CD Pipelines, Azure Pipelines, GitHub Actions, Agile/Scrum</p>
+                        <p class="skill-list">Azure DevOps, GitHub Actions, TeamCity, BitBucket Pipelines, Octopus Deploy</p>
                     </div>
                     <div class="skill-item">
                         <h3 class="skill-title">AI & Agent Systems</h3>
-                        <p class="skill-list">AI Coding, Agent-Driven Development, AI Infrastructure Design</p>
+                        <p class="skill-list">AI Coding, Agent-Driven Development, AI Infrastructure Design - Passionate about pushing the limits of AI-driven development</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3 class="skill-title">Database Management</h3>
+                        <p class="skill-list">MySQL, PostgreSQL, MongoDB, Redis, Supabase</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3 class="skill-title">Messaging Frameworks</h3>
+                        <p class="skill-list">RabbitMQ</p>
+                    </div>
+                    <div class="skill-item">
+                        <h3 class="skill-title">Monitoring & Logging</h3>
+                        <p class="skill-list">Prometheus, Grafana, ELK Stack, Splunk</p>
                     </div>
                     <div class="skill-item">
                         <h3 class="skill-title">Security & Compliance</h3>
                         <p class="skill-list">HIPAA, Cloud Security, PCI Compliance</p>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Tools Section -->
+        <section id="ai-tools" class="ai-tools">
+            <div class="ai-tools-container">
+                <div class="ai-tools-header">
+                    <span class="section-label">AI TOOLS</span>
+                    <h2 class="section-heading-large">
+                        AI Coding Assistants<br>
+                        I utilize
+                    </h2>
+                </div>
+                <div class="ai-tools-list">
+                    <ul class="ai-tools-items">
+                        <li><a href="https://github.com/anthropics/claude-code" target="_blank" rel="noopener noreferrer" class="project-link">Claude Code</a></li>
+                        <li><a href="https://cursor.com" target="_blank" rel="noopener noreferrer" class="project-link">Cursor</a></li>
+                        <li><a href="https://github.com/google-gemini/gemini-cli" target="_blank" rel="noopener noreferrer" class="project-link">Gemini (Google AI)</a></li>
+                        <li><a href="https://github.com/github/copilot-cli" target="_blank" rel="noopener noreferrer" class="project-link">GitHub Copilot CLI</a></li>
+                        <li><a href="https://cline.bot/" target="_blank" rel="noopener noreferrer" class="project-link">Cline</a></li>
+                        <li><a href="https://kilo.ai/" target="_blank" rel="noopener noreferrer" class="project-link">Kilo Code</a></li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -214,15 +252,46 @@
                     </h2>
                 </div>
                 <div class="projects-list">
-                    <div class="project-item">
-                        <h3 class="project-title">Vibe-on-the-Go</h3>
-                        <p class="project-description">A powerful platform that brings AI coding agents (Claude Code, Codex, and more) to mobile devices and web browsers. Work seamlessly across devices with end-to-end encryption and zero-knowledge architecture.</p>
-                        <a href="https://github.com/SGranquist13/votg" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
+                    <div class="projects-category">
+                        <h3 class="category-title">Personal Projects</h3>
+                        <div class="project-item">
+                            <h4 class="project-title">Vibe-on-the-Go</h4>
+                            <p class="project-description">A powerful platform that brings AI coding agents (Claude Code, Codex, and more) to mobile devices and web browsers. Work seamlessly across devices with end-to-end encryption and zero-knowledge architecture.</p>
+                            <a href="https://github.com/SGranquist13/votg" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
+                        </div>
+                        <div class="project-item">
+                            <h4 class="project-title">Vibe Marketing</h4>
+                            <p class="project-description">Marketing materials and website for the Vibe platform ecosystem.</p>
+                            <a href="https://sgranquist13.github.io/vibe-marketing/" target="_blank" rel="noopener noreferrer" class="project-link">Visit Website →</a>
+                        </div>
                     </div>
-                    <div class="project-item">
-                        <h3 class="project-title">Vibe Marketing</h3>
-                        <p class="project-description">Marketing materials and website for the Vibe platform ecosystem.</p>
-                        <a href="https://sgranquist13.github.io/vibe-marketing/" target="_blank" rel="noopener noreferrer" class="project-link">Visit Website →</a>
+                    
+                    <div class="projects-category">
+                        <h3 class="category-title">Professional Projects</h3>
+                        <div class="project-item">
+                            <h4 class="project-title">Aiforia API</h4>
+                            <p class="project-description">Public API for the Aiforia Platform, enabling seamless integrations with third-party systems and user applications.</p>
+                            <a href="https://cloud.aiforia.com/api/index.html" target="_blank" rel="noopener noreferrer" class="project-link">View API Docs →</a>
+                        </div>
+                        <div class="project-item">
+                            <h4 class="project-title">Aiforia Bridge</h4>
+                            <p class="project-description">An integration tool that bridges customer deployments with the Aiforia platform, ensuring secure operations.</p>
+                            <span class="project-link">Enterprise Integration Tool</span>
+                        </div>
+                        <div class="project-item">
+                            <h4 class="project-title">Aiforia Connector</h4>
+                            <p class="project-description">A tool for compressing and uploading images to the Aiforia platform, supporting visualization and AI-powered analysis.</p>
+                            <a href="https://connector.aiforia.com" target="_blank" rel="noopener noreferrer" class="project-link">Download Connector →</a>
+                        </div>
+                        <div class="project-item">
+                            <h4 class="project-title">Aiforia Platform</h4>
+                            <p class="project-description">A cloud-based AI-driven platform for pathology image analysis, enabling automated workflows, precise diagnostics, and advancements in medical research and clinical practice.</p>
+                            <a href="https://www.aiforia.com" target="_blank" rel="noopener noreferrer" class="project-link">Visit our site →</a>
+                        </div>
+                        <div class="project-item">
+                            <h4 class="project-title">And More...</h4>
+                            <p class="project-description">Additional professional projects that cannot be shared publicly.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -244,9 +313,19 @@
                         <span class="education-date">2015 - 2019</span>
                     </div>
                     <div class="education-item">
-                        <h3 class="education-degree">Minor, Data Science</h3>
+                        <h3 class="education-degree">Associates Degree, Data Science</h3>
                         <span class="education-school">Winona State University</span>
                         <span class="education-date">2017 - 2019</span>
+                    </div>
+                    <div class="education-item">
+                        <h3 class="education-degree">Dean's List</h3>
+                        <span class="education-school">Winona State University</span>
+                        <span class="education-date">2019</span>
+                    </div>
+                    <div class="education-item">
+                        <h3 class="education-degree">Publications</h3>
+                        <span class="education-school"><a href="https://openriver.winona.edu/do/search/?q=author%3A%22Steven%20W.%20Granquist%22&start=0&context=11720807&facet=" target="_blank" rel="noopener noreferrer" class="project-link">OpenRiver — Steven W. Granquist</a></span>
+                        <p class="education-note"><a href="2019conference.pdf" target="_blank" rel="noopener noreferrer" class="project-link">2019conference.pdf</a></p>
                     </div>
                 </div>
             </div>

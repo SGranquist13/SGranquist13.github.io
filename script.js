@@ -80,6 +80,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Typewriter animation for hero role
+    const typewriterElement = document.getElementById('typewriter');
+    const text = 'Senior Systems Architect';
+    let index = 0;
+    
+    function typeWriter() {
+        if (index < text.length) {
+            typewriterElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(typeWriter, 100); // Adjust speed here (milliseconds)
+        } else {
+            // Add blinking cursor after typing is done
+            typewriterElement.innerHTML += '<span class="cursor">|</span>';
+        }
+    }
+    
+    // Start typewriter animation after a short delay
+    setTimeout(typeWriter, 1000);
+    
     // Skill item interactions (additional hover effects handled by CSS)
     const skillItems = document.querySelectorAll('.skill-item');
     skillItems.forEach(item => {
@@ -89,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Scroll-triggered animations
-    const animatedSections = document.querySelectorAll('.about, .skills, .experience, .projects, .education, .contact');
+    const animatedSections = document.querySelectorAll('.about, .skills, .ai-tools, .experience, .projects, .education, .contact');
     
     const observerOptions = {
         threshold: 0.05,
