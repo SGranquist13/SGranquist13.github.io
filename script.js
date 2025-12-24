@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Scroll-triggered animations
-    const animatedSections = document.querySelectorAll('.about, .skills, .experience, .education, .contact');
+    const animatedSections = document.querySelectorAll('.about, .skills, .experience, .projects, .education, .contact');
     
     const observerOptions = {
         threshold: 0.05,
