@@ -847,6 +847,41 @@ body {
     background: linear-gradient(90deg, var(--color-accent), var(--color-accent-secondary));
 }
 
+/* Project with 3D Visualization */
+.project-item-with-3d {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.project-3d-canvas {
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+    background: transparent;
+    flex-shrink: 0;
+    margin-top: 5px;
+}
+
+.project-coming-soon {
+    font-size: clamp(14px, 1.2vw, 16px);
+    font-weight: 400;
+    color: var(--color-accent);
+    cursor: default;
+    display: inline-block;
+    opacity: 0.8;
+}
+
+.project-coming-soon::after {
+    display: none;
+}
+
 /* Education Section */
 .education {
     padding: calc(var(--spacing-section) * 2) 60px;
@@ -1115,6 +1150,15 @@ body {
     .social-links {
         flex-direction: column;
         gap: 20px;
+    }
+
+    .project-item-with-3d {
+        gap: 15px;
+    }
+
+    .project-3d-canvas {
+        width: 80px;
+        height: 80px;
     }
 }
 
