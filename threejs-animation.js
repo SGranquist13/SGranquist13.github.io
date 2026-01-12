@@ -56,56 +56,6 @@ function initThreeJS() {
     setupIntersectionObserver('hero', canvas.parentElement);
 }
 
-// Initialize prism scene
-function initPrismScene() {
-    const canvas = document.getElementById('prism-canvas');
-    if (!canvas) return;
-
-    // Use the canvas's actual displayed size, not the container
-    const width = canvas.clientWidth;
-    const height = canvas.clientHeight;
-
-    // Scene setup
-    const scene = new THREE.Scene();
-    scene.background = null;
-
-    // Camera setup
-    const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
-    camera.position.z = 20;
-
-    // Renderer setup
-    const renderer = new THREE.WebGLRenderer({
-        canvas: canvas,
-        antialias: true,
-        alpha: true
-    });
-    renderer.setSize(width, height);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-    // Create prism
-    createPrism(scene);
-
-    // Store scene data
-    scenes3D['prism'] = {
-        scene: scene,
-        camera: camera,
-        renderer: renderer,
-        canvas: canvas,
-        objects: scene.children,
-        isAnimating: false,
-        animationId: null
-    };
-
-    // Render initial frame
-    renderer.render(scene, camera);
-
-    // Handle window resize
-    window.addEventListener('resize', () => onWindowResize('prism'));
-
-    // Intersection Observer for performance
-    setupIntersectionObserver('prism', canvas);
-}
-
 // Create large cube for hero section
 function createCube(scene) {
     const lineMaterial = new THREE.LineBasicMaterial({
@@ -129,30 +79,6 @@ function createCube(scene) {
     };
 
     scene.add(cubeWireframe);
-}
-
-// Create 3D prism
-function createPrism(scene) {
-    const lineMaterial = new THREE.LineBasicMaterial({
-        color: 0x7ee787,
-        linewidth: 1,
-        transparent: true,
-        opacity: 0.8
-    });
-
-    const prismGeometry = new THREE.ConeGeometry(5, 12, 6);
-    const prismEdges = new THREE.EdgesGeometry(prismGeometry);
-    const prismWireframe = new THREE.LineSegments(prismEdges, lineMaterial);
-
-    prismWireframe.position.set(0, 0, 0);
-    prismWireframe.userData = {
-        rotationSpeedX: 0.0005,
-        rotationSpeedY: 0.0008,
-        rotationSpeedZ: 0.0003,
-        type: 'prism'
-    };
-
-    scene.add(prismWireframe);
 }
 
 // Universal animation loop
@@ -241,7 +167,6 @@ function setupIntersectionObserver(sceneId, element) {
 function waitForThreeJS() {
     if (typeof THREE !== 'undefined') {
         initThreeJS();
-        initPrismScene();
     } else {
         setTimeout(waitForThreeJS, 100);
     }
