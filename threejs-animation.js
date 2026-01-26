@@ -2,6 +2,7 @@
 
 // Store all 3D scenes and their state
 const scenes3D = {};
+let reduceMotionEnabled = false;
 
 // Initialize hero Three.js scene
 function initThreeJS() {
@@ -84,7 +85,7 @@ function createCube(scene) {
 // Universal animation loop
 function animateScene(sceneId) {
     const sceneData = scenes3D[sceneId];
-    if (!sceneData || !sceneData.isAnimating) return;
+    if (!sceneData || !sceneData.isAnimating || reduceMotionEnabled) return;
 
     sceneData.animationId = requestAnimationFrame(() => animateScene(sceneId));
 
@@ -107,6 +108,24 @@ function animateScene(sceneId) {
 
     sceneData.camera.lookAt(sceneData.scene.position);
     sceneData.renderer.render(sceneData.scene, sceneData.camera);
+}
+
+function setReducedMotion(value) {
+    reduceMotionEnabled = Boolean(value);
+    if (reduceMotionEnabled) {
+        Object.values(scenes3D).forEach(sceneData => {
+            if (sceneData && sceneData.animationId) {
+                cancelAnimationFrame(sceneData.animationId);
+            }
+        });
+    } else {
+        Object.keys(scenes3D).forEach(sceneId => {
+            const sceneData = scenes3D[sceneId];
+            if (sceneData && sceneData.isAnimating) {
+                animateScene(sceneId);
+            }
+        });
+    }
 }
 
 // Handle window resize for all scenes
@@ -177,4 +196,8 @@ if (document.readyState === 'loading') {
 } else {
     waitForThreeJS();
 }
+
+window.threeHero = {
+    setReducedMotion
+};
 

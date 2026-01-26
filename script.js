@@ -155,7 +155,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Calculate and display experience duration
     function calculateDuration(startDate, endDate) {
         const start = new Date(startDate + '-01');
-        const end = endDate === 'present' ? new Date() : new Date(endDate + '-01');
+        const isPresent = endDate === 'present';
+        const end = isPresent ? new Date() : new Date(endDate + '-01');
         
         let years = end.getFullYear() - start.getFullYear();
         let months = end.getMonth() - start.getMonth();
@@ -174,10 +175,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (years > 0) {
             parts.push(years === 1 ? '1 year' : `${years} years`);
         }
-        if (months > 0) {
+        if (!isPresent && months > 0) {
             parts.push(months === 1 ? '1 month' : `${months} months`);
         }
-        
+
         return parts.length > 0 ? `(${parts.join(' ')})` : '';
     }
     
@@ -193,4 +194,30 @@ document.addEventListener('DOMContentLoaded', function() {
             durationElement.textContent = duration;
         }
     });
+
+    // Reduced motion toggle for dither background
+    const motionToggle = document.getElementById('motion-toggle');
+    if (motionToggle) {
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const storedPreference = localStorage.getItem('reduceMotion');
+        const initialReduced = storedPreference === null ? prefersReducedMotion : storedPreference === 'true';
+
+        const applyReducedMotion = (isReduced) => {
+            motionToggle.setAttribute('aria-pressed', String(isReduced));
+            localStorage.setItem('reduceMotion', String(isReduced));
+            if (window.ditherBackground && typeof window.ditherBackground.setReducedMotion === 'function') {
+                window.ditherBackground.setReducedMotion(isReduced);
+            }
+            if (window.threeHero && typeof window.threeHero.setReducedMotion === 'function') {
+                window.threeHero.setReducedMotion(isReduced);
+            }
+        };
+
+        applyReducedMotion(initialReduced);
+
+        motionToggle.addEventListener('click', () => {
+            const next = motionToggle.getAttribute('aria-pressed') !== 'true';
+            applyReducedMotion(next);
+        });
+    }
 });

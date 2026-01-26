@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <canvas id="dither-bg" aria-hidden="true"></canvas>
+    <div class="dither-overlay" aria-hidden="true"></div>
     <header>
         <nav class="nav">
             <ul class="nav-list">
@@ -32,6 +34,9 @@
                 <h1 class="hero-name">Steven Granquist</h1>
                 <p class="hero-role"><span id="typewriter"></span></p>
                 <p class="hero-passion">Infrastructure Architecture & AI/ML Specialization - AI Innovation -  HPC Workloads</p>
+            </div>
+            <div class="hero-welcome">
+                <span class="hero-welcome__message">Welcome!</span>
             </div>
             <div class="scroll-indicator">
                 <span class="scroll-arrow">↓</span>
@@ -165,7 +170,7 @@
                         <div class="experience-header-item">
                             <h3 class="experience-title">Senior Systems Architect</h3>
                             <span class="experience-company">Aiforia Technologies</span>
-                            <span class="experience-date" data-start="2022-07" data-end="present">July 2022 - Present</span>
+                            <span class="experience-date" data-start="2022-01" data-end="present">January 2022 - Present</span>
                             <span class="experience-duration"></span>
                         </div>
                         <ul class="experience-details">
@@ -186,7 +191,7 @@
                         <div class="experience-header-item">
                             <h3 class="experience-title">Infrastructure Architect</h3>
                             <span class="experience-company">Read Naturally</span>
-                            <span class="experience-date" data-start="2019-12" data-end="2022-07">December 2019 - July 2022</span>
+                            <span class="experience-date" data-start="2019-12" data-end="2022-12">December 2019 - December 2022</span>
                             <span class="experience-duration"></span>
                         </div>
                         <ul class="experience-details">
@@ -208,7 +213,7 @@
                         <div class="experience-header-item">
                             <h3 class="experience-title">Systems Administrator</h3>
                             <span class="experience-company">Kaningo</span>
-                            <span class="experience-date" data-start="2019-05" data-end="2019-10">May 2019 - October 2019</span>
+                            <span class="experience-date" data-start="2019-05" data-end="2019-11">May 2019 - November 2019</span>
                             <span class="experience-duration"></span>
                         </div>
                         <ul class="experience-details">
@@ -257,22 +262,12 @@
                 </div>
                 <div class="projects-list">
                     <div class="projects-category">
-                        <h3 class="category-title">Personal Projects</h3>
-                        <div class="project-item">
-                            <h4 class="project-title">Vibe-on-the-Go</h4>
-                            <p class="project-description">Customized fork with personalized enhancements for mobile AI coding integration.</p>
-                            <a href="https://github.com/SGranquist13/votg" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
-                        </div>
-                        <div class="project-item">
-                            <h4 class="project-title">Vibe Marketing</h4>
-                            <p class="project-description">Marketing materials and website for the Vibe platform ecosystem.</p>
-                            <a href="https://sgranquist13.github.io/vibe-marketing/" target="_blank" rel="noopener noreferrer" class="project-link">Visit Website →</a>
-                        </div>
-                        <p class="project-description" style="margin-top: 1rem; opacity: 0.7;">More projects coming soon...</p>
-                    </div>
-                    
-                    <div class="projects-category">
                         <h3 class="category-title">Professional Projects</h3>
+                        <div class="project-item">
+                            <h4 class="project-title">Aiforia Platform</h4>
+                            <p class="project-description">A global, AI-driven pathology platform used for patient diagnoses and research. Built for heavy GPU compute workloads to power large-scale inference and training across enterprise deployments.</p>
+                            <a href="https://www.aiforia.com" target="_blank" rel="noopener noreferrer" class="project-link">Visit our site →</a>
+                        </div>
                         <div class="project-item">
                             <h4 class="project-title">Aiforia API</h4>
                             <p class="project-description">Public API for the Aiforia Platform, enabling seamless integrations with third-party systems and user applications.</p>
@@ -289,15 +284,11 @@
                             <a href="https://connector.aiforia.com" target="_blank" rel="noopener noreferrer" class="project-link">Download Connector →</a>
                         </div>
                         <div class="project-item">
-                            <h4 class="project-title">Aiforia Platform</h4>
-                            <p class="project-description">A cloud-based AI-driven platform for pathology image analysis, enabling automated workflows, precise diagnostics, and advancements in medical research and clinical practice.</p>
-                            <a href="https://www.aiforia.com" target="_blank" rel="noopener noreferrer" class="project-link">Visit our site →</a>
-                        </div>
-                        <div class="project-item">
                             <h4 class="project-title">And More...</h4>
                             <p class="project-description">Additional professional projects that cannot be shared publicly.</p>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -352,8 +343,15 @@
             </div>
         </section>
     </main>
+    <div class="motion-toggle">
+        <button class="motion-toggle__btn" id="motion-toggle" type="button" aria-pressed="false">
+            <span class="motion-toggle__switch" aria-hidden="true"></span>
+            <span class="motion-toggle__text">Reduce motion</span>
+        </button>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script src="dither-background.js"></script>
     <script src="threejs-animation.js"></script>
     <script src="script.js"></script>
 </body>
