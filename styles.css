@@ -1340,3 +1340,18 @@ header {
 
 
 
+
+/* Orbit highlight, extending the published main site. */
+.orbit-note { display: inline-block; margin-top: 28px; color: var(--color-accent); font-size: 14px; text-underline-offset: 6px; }
+.orbit-highlight { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.4fr); align-items: center; gap: 48px; padding: 0 0 56px; margin-bottom: 56px; border-bottom: 1px solid #333; scroll-margin-top: 110px; }
+.orbit-status { font-size: 12px; color: var(--color-accent); margin-bottom: 18px; }
+.orbit-copy h3 { font-size: clamp(32px, 4vw, 52px); line-height: 1.1; margin-bottom: 24px; font-weight: 500; }
+.orbit-copy > p:not(.orbit-status) { color: #bcbcbc; font-size: 14px; line-height: 1.8; margin-bottom: 18px; }
+.orbit-copy .project-link { color: var(--color-accent); margin: 6px 0 20px; }
+.orbit-copy .orbit-soon { font-size: 12px; margin-bottom: 0; }
+.orbit-preview { display: block; min-width: 0; text-decoration: none; color: inherit; }
+.orbit-preview img { display: block; width: 100%; height: auto; border: 1px solid #333; }
+.orbit-caption { display: flex; justify-content: space-between; gap: 10px; margin-top: 14px; font-size: 11px; color: #bcbcbc; }
+.orbit-caption > span { color: var(--color-accent); }
+.orbit-highlight a:focus-visible, .orbit-note:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 6px; }
+@media (max-width: 900px) { .orbit-highlight { grid-template-columns: minmax(0, 1fr); gap: 28px; } }
